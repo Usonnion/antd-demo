@@ -4,7 +4,9 @@
   "private": true,
   "dependencies": {
     "antd": "^2.13.10",
+    "history": "^4.7.2",
     "husky": "^0.14.3",
+    "immutable": "^3.8.2",
     "lint-staged": "^5.0.0",
     "prettier": "^1.8.2",
     "prop-types": "^15.6.0",
@@ -12,8 +14,10 @@
     "react-dom": "^16.1.0",
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.2.2",
+    "react-router-redux": "^5.0.0-alpha.8",
     "react-scripts": "1.0.17",
     "redux": "^3.7.2",
+    "redux-immutablejs": "^0.0.8",
     "redux-saga": "^0.16.0"
   },
   "scripts": {

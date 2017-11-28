@@ -1,6 +1,3 @@
-/**
- * Created by Administrator on 2017-11-13.
- */
 import AsyncComponent from '../../../components/asyncComponent';
 
 const routes = {

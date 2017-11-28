@@ -1,15 +1,12 @@
-/**
- * Created by Administrator on 2017-11-13.
- */
-import LoginRoutes from './login/routes';
-import HomeRoutes from './home/routes';
+import LoginRoute from './login/route';
+import HomeRoute from './home/route';
 import AsycnComponent from '../components/asyncComponent';
 
 const routes = [
   {
     path: '',
     component: AsycnComponent(() => (import('./app'))),
-    routes: [LoginRoutes, HomeRoutes]
+    routes: [LoginRoute, HomeRoute]
   }
 ];
 

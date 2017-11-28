@@ -1,6 +1,3 @@
-/**
- * Created by Administrator on 2017-11-13.
- */
 const { injectBabelPlugin } = require('react-app-rewired');
 const rewireLess = require('react-app-rewire-less');
 
@@ -10,7 +7,6 @@ module.exports = function override(config, env) {
   config = rewireLess.withLoaderOptions({
     modifyVars: {
       "@primary-color": "#1DA57A",
-      "@font-size-base": "16px",
     },
   })(config, env);
   return config;

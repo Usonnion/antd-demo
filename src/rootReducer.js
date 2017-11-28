@@ -1,11 +1,19 @@
-/**
- * Created by Administrator on 2017-11-14.
- */
-import { combineReducers } from 'redux';
-import app from './container/reducer';
+import login from './model/login/reducer';
+import home from './model/home/reducer';
+import customer from './model/customer/reducer';
+import product from './model/product/reducer';
+import { Map } from 'immutable';
+import { combineReducers } from 'redux-immutablejs'
+import { routerReducer } from 'react-router-redux'
 
-const rootReducer = combineReducers({
-  app
-});
+const rootCombinedReducer = combineReducers(
+  Map({
+    home,
+    login,
+    customer,
+    product,
+    router: routerReducer
+  })
+);
 
-export default rootReducer;
+export default rootCombinedReducer;

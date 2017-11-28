@@ -1,0 +1,50 @@
+.productCard {
+  cursor: pointer;
+
+  img {
+    width: 100%;
+  }
+
+  .textWrapper {
+    padding: 20px 20px 0;
+  }
+
+  .productTitle {
+    margin-bottom: 4px;
+    font-size: 16px;
+    text-overflow: ellipsis;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    font-weight: 500;
+  }
+
+  .productDescription {
+    height: 44px;
+    line-height: 22px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  .action {
+    border-top: 1px solid #e8e8e8;
+    background: #f7f9fa;
+    zoom: 1;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+
+    li {
+      width: 50%;
+      float: left;
+      text-align: center;
+      margin: 12px 0;
+      font-size: 16px;
+    }
+
+    :not(:last-child) {
+      border-right: 1px solid #e8e8e8;
+    }
+  }
+}
