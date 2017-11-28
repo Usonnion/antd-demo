@@ -1,6 +1,9 @@
-import React, { PureComponent } from 'react';
+/**
+ * Created by Administrator on 2017-11-14.
+ */
+import React, { Component } from 'react';
 
-class Dashboard extends PureComponent {
+class Dashboard extends Component {
   render() {
     return (
       <div>this is dashboard</div>
