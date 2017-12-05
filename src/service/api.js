@@ -2,15 +2,14 @@ import { request } from '../utils/request';
 import { delay } from '../utils/utils';
 
 export async function accountLogin(params) {
-  return request('http://118.190.175.30/wzml-service/api/login', {
+  return request('http://10.60.1.193:8888/zytech/chanpin/phone/dealers/getYanzheng.action', {
     method: 'POST',
     body: params
   });
 }
 
-export async function fetchReservationData(params) {
+export async function fetchReservationNoticeData(params) {
   // return request()
-  delay(1000);
   return [
     {
       id: 1,
@@ -41,50 +40,72 @@ export async function fetchReservationData(params) {
 }
 
 export async function fetchCustomerData(params) {
-  delay(5000);
   return {
     current: 2,
     total: 100,
     data: [
       {
         id: 1,
-        name: '王友生1',
+        name: '王友生',
         wechat: '22563',
-        age: '26',
-        address: '将搭建开发回款单据安徽开封后 合肥的课教案浩丰科技的是客户科技发多少'
+        birthday: '1991-01-01',
+        registerDate: '0',
+        referee: '张天硕',
+        phone: '18801615551',
+        status: '准会员',
+        comment: '将搭建开发回款单据安徽开封后 合肥的课教案浩丰科技的是客户科技发多少',
       },
       {
         id: 2,
-        name: '王友生2',
+        name: '王友生',
         wechat: '22563',
-        age: '26',
-        address: '将搭建开发回款单据安徽开封后 合肥的课教案浩丰科技的是客户科技发多少'
+        birthday: '1991-01-01',
+        registerDate: '0',
+        referee: '张天硕',
+        phone: '18801615551',
+        status: '准会员',
+        comment: '将搭建开发回款单据安徽开封后 合肥的课教案浩丰科技的是客户科技发多少',
       }, {
         id: 3,
         name: '王友生3',
         wechat: '22563',
-        age: '26',
-        address: '将搭建开发回款单据安徽开封后 合肥的课教案浩丰科技的是客户科技发多少'
+        birthday: '1991-01-01',
+        registerDate: '0',
+        referee: '张天硕',
+        phone: '18801615551',
+        status: '准会员',
+        comment: '将搭建开发回款单据安徽开封后 合肥的课教案浩丰科技的是客户科技发多少',
       }, {
         id: 4,
         name: '王友生4',
         wechat: '22563',
-        age: '26',
-        address: '将搭建开发回款单据安徽开封后 合肥的课教案浩丰科技的是客户科技发多少'
-      }
-      , {
+        birthday: '1991-01-01',
+        registerDate: '0',
+        referee: '张天硕',
+        phone: '18801615551',
+        status: '准会员',
+        comment: '将搭建开发回款单据安徽开封后 合肥的课教案浩丰科技的是客户科技发多少',
+      },{
         id: 5,
         name: '王友生4',
         wechat: '22563',
-        age: '26',
-        address: '将搭建开发回款单据安徽开封后 合肥的课教案浩丰科技的是客户科技发多少'
+        birthday: '1991-01-01',
+        registerDate: '0',
+        referee: '张天硕',
+        phone: '18801615551',
+        status: '准会员',
+        comment: '将搭建开发回款单据安徽开封后 合肥的课教案浩丰科技的是客户科技发多少',
       }, {
         id: 6,
         name: '王友生4',
         wechat: '22563',
-        age: '26',
-        address: '将搭建开发回款单据安徽开封后 合肥的课教案浩丰科技的是客户科技发多少'
-      }
+        birthday: '1991-01-01',
+        registerDate: '0',
+        referee: '张天硕',
+        phone: '18801615551',
+        status: '准会员',
+        comment: '将搭建开发回款单据安徽开封后 合肥的课教案浩丰科技的是客户科技发多少',
+      },
     ]
   }
 }

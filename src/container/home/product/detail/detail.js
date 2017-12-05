@@ -2,6 +2,7 @@ import './detail.less';
 import React, { PureComponent } from 'react';
 import { Button, Row, Col, Card } from 'antd';
 import { connect } from 'react-redux';
+import PageHeader from '../../../../components/PageHeader';
 import DescriptionList from '../../../../components/DescriptionList';
 
 const ButtonGroup = Button.Group;
@@ -39,38 +40,34 @@ class ProductDetail extends PureComponent {
   render() {
     return (
       <div>
-        <div className='productDetailPageHeader'>
-          <div className='productDetailLogo'>
-            <img alt=""
-                 src="https://gw.alipayobjects.com/zos/rmsportal/nxkuOJlFJuAUhzlMTCEe.png" />
-          </div>
-          <div className='productDetailMain'>
-            <div className='productDetailRow'>
-              <h1 className='productDetailTitle'>spa</h1>
-              <div className='productDetailAction'>{action}</div>
-            </div>
-            <div className='productDetailRow'>
-              <div className='productDetailContent'>{description}</div>
-              <div className='productDetailExtraContent'>{extra}</div>
-            </div>
-          </div>
-        </div>
-        <Card title="产品展示" bordered={false} style={{marginTop: '24px'}}>
+        <PageHeader
+          title="SPA"
+          action={action}
+          description={description}
+          extra={extra}
+          logo="https://gw.alipayobjects.com/zos/rmsportal/nxkuOJlFJuAUhzlMTCEe.png"
+        />
+        <Card title="产品展示" bordered={false} style={{ marginTop: '24px' }}>
           <Row gutter={24}>
             <Col md={8}>
-              <img alt="产品图片" style={{width: '100%',marginBottom: '24px'}} src='https://gw.alipayobjects.com/zos/rmsportal/uMfMFlvUuceEyPpotzlq.png' />
+              <img alt="产品图片" style={{ width: '100%', marginBottom: '24px' }}
+                   src='https://gw.alipayobjects.com/zos/rmsportal/uMfMFlvUuceEyPpotzlq.png' />
             </Col>
             <Col md={8}>
-              <img alt="产品图片" style={{width: '100%', marginBottom: '24px'}} src='https://gw.alipayobjects.com/zos/rmsportal/uMfMFlvUuceEyPpotzlq.png' />
+              <img alt="产品图片" style={{ width: '100%', marginBottom: '24px' }}
+                   src='https://gw.alipayobjects.com/zos/rmsportal/uMfMFlvUuceEyPpotzlq.png' />
             </Col>
             <Col md={8}>
-              <img alt="产品图片" style={{width: '100%', marginBottom: '24px'}} src='https://gw.alipayobjects.com/zos/rmsportal/uMfMFlvUuceEyPpotzlq.png' />
+              <img alt="产品图片" style={{ width: '100%', marginBottom: '24px' }}
+                   src='https://gw.alipayobjects.com/zos/rmsportal/uMfMFlvUuceEyPpotzlq.png' />
             </Col>
             <Col md={8}>
-              <img alt="产品图片" style={{width: '100%', marginBottom: '24px'}} src='https://gw.alipayobjects.com/zos/rmsportal/uMfMFlvUuceEyPpotzlq.png' />
+              <img alt="产品图片" style={{ width: '100%', marginBottom: '24px' }}
+                   src='https://gw.alipayobjects.com/zos/rmsportal/uMfMFlvUuceEyPpotzlq.png' />
             </Col>
             <Col md={8}>
-              <img alt="产品图片" style={{width: '100%', marginBottom: '24px'}} src='https://gw.alipayobjects.com/zos/rmsportal/uMfMFlvUuceEyPpotzlq.png' />
+              <img alt="产品图片" style={{ width: '100%', marginBottom: '24px' }}
+                   src='https://gw.alipayobjects.com/zos/rmsportal/uMfMFlvUuceEyPpotzlq.png' />
             </Col>
           </Row>
         </Card>

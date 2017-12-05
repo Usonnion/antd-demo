@@ -11,7 +11,12 @@ import CustomRoute from './components/customRoute';
 import { createStore, applyMiddleware } from 'redux';
 import registerServiceWorker from './registerServiceWorker';
 import createHistory from 'history/createBrowserHistory';
-import { ConnectedRouter, routerMiddleware } from 'react-router-redux'
+import { ConnectedRouter, routerMiddleware } from 'react-router-redux';
+import zhCN from 'antd/lib/locale-provider/zh_CN';
+import { LocaleProvider } from 'antd';
+import moment from 'moment';
+import 'moment/locale/zh-cn';
+moment.locale('zh-cn');
 
 const sagaMiddleware = createSagaMiddleware();
 const history = createHistory()
@@ -22,9 +27,9 @@ sagaMiddleware.run(rootSaga);
 
 ReactDOM.render(<Provider store={store}>
   <ConnectedRouter history={history}>
-    <div>
+    <LocaleProvider locale={zhCN}>
       <CustomRoute routes={routes} />
-    </div>
+    </LocaleProvider>
   </ConnectedRouter>
-  </Provider>, document.getElementById('root'));
+</Provider>, document.getElementById('root'));
 registerServiceWorker();

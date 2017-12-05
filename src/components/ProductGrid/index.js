@@ -17,7 +17,7 @@ class ProductGrid extends PureComponent {
               </div>
               <div className="textWrapper">
                 <div className="productTitle">
-                  <a href="#">{item.title}</a>
+                  <a href="">{item.title}</a>
                 </div>
                 <div className="productDescription">
                   {item.description}

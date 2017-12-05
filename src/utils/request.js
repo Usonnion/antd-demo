@@ -5,7 +5,7 @@ import isomorphicFetch from 'isomorphic-fetch';
 class FetchTimeOutError extends Error { };
 
 export const request = (url, options = {}) => {
-  const finalOptions = Object.assign({}, options, getDefaultFetchOpts(options, '1'))
+  const finalOptions = Object.assign({}, options, getDefaultFetchOpts(options, '1'));
 
   return new Promise((resolve, reject) => {
     const onTimeout = () => reject(new FetchTimeOutError(`Call to ${url} has taken too long!`));

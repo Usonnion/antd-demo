@@ -1,8 +1,9 @@
 import React, { PureComponent } from 'react';
-import { Form, Input, Button, Card, Upload, Icon, Modal } from 'antd';
+import { Form, Input, Button, Card, Upload, Icon, Modal, DatePicker } from 'antd';
 
 const FormItem = Form.Item;
 const { TextArea } = Input;
+const { RangePicker } = DatePicker;
 
 const formItemLayout = {
   labelCol: {
@@ -100,6 +101,18 @@ class EditableProduct extends PureComponent {
               }],
             })(
               <Input placeholder="请输入产品名称" />
+            )}
+          </FormItem>
+          <FormItem
+            {...formItemLayout}
+            label="有效时间"
+          >
+            {getFieldDecorator('date', {
+              rules: [{
+                required: false, message: '请输入产品名称',
+              }],
+            })(
+              <RangePicker />
             )}
           </FormItem>
           <FormItem

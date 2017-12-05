@@ -7,14 +7,26 @@ import CustomRoute from '../../components/customRoute';
 import { Layout, Menu, Icon, Breadcrumb } from 'antd';
 import NoticeIcon from '../../components/NoticeIcon'
 import { connect } from 'react-redux';
+import DealReservationPanel from './reservation/DealReservationPanel';
+import ProductSelector from './order/ProductSelector';
+import CustomerSelector from './customer/CustomerSelector';
+import ReservationSelector from './reservation/ReservationSelector';
+
 const { Header, Sider, Content } = Layout;
+const SubMenu = Menu.SubMenu;
 
 const breadcrumbNameMap = {
   '/home/dashboard/test': '测试',
   '/home/customer': '客户',
   '/home/product': '产品',
   '/home/product/edit': '修改',
-  '/home/product/detail': '详情',
+  '/home/product/detail': '产品详情',
+  '/home/reservation': '预订单',
+  '/home/customer/detail': '详情',
+  '/home/reservation/detail': '详情',
+  '/home/order': '消费单',
+  '/home/order/detail': '详情',
+  '/home/order/edit': '修改'
 };
 
 const menus = [
@@ -29,10 +41,25 @@ const menus = [
     iconType: 'user'
   },
   {
+    path: '/home/reservation',
+    title: '预订单管理',
+    iconType: 'shopping-cart'
+  },
+  {
+    path: '/home/order',
+    title: '消费清单管理',
+    iconType: 'red-envelope'
+  },
+  {
     path: '/home/product',
     title: '产品管理',
     iconType: 'appstore-o'
-  }
+  },
+  {
+    path: '/home/reservation',
+    title: '系统设置',
+    iconType: 'setting'
+  },
 ]
 
 class Home extends PureComponent {
@@ -67,6 +94,20 @@ class Home extends PureComponent {
     this.props.history.push(menus[item.key].path)
   }
 
+  renderMenuItem(item, index) {
+    if (item.children) {
+      return <SubMenu key={index} title={<span><Icon type={item.iconType} /><span>{item.title}</span></span>}>
+        {item.children.map((child, index) => {
+          return this.renderMenuItem(child, index);
+        })}
+      </SubMenu>
+    }
+    return <Menu.Item key={index}>
+      <Icon type={item.iconType} />
+      <span>{item.title}</span>
+    </Menu.Item>
+  }
+
   render() {
     const { location, reservationLoading, reservationList, alertCount } = this.props;
     const pathSnippets = location.pathname.split('/').filter(i => i);
@@ -91,6 +132,7 @@ class Home extends PureComponent {
     return (
       <Layout style={{ minHeight: '100vh' }}>
         <Sider
+          style={{zIndex: '100'}}
           trigger={null}
           collapsible
           collapsed={this.state.collapsed}
@@ -101,14 +143,13 @@ class Home extends PureComponent {
               <h1>御众堂</h1>
             </Link>
           </div>
-          <Menu theme="dark" mode="inline"
+          <Menu theme="dark" mode="inline" inlineCollapsed={true}
                 defaultSelectedKeys={['0']}
                 onClick={(item) => this.onMenuItemClick(item)}>
             {
-              menus.map((item, index) => <Menu.Item key={index}>
-                <Icon type={item.iconType} />
-                <span>{item.title}</span>
-              </Menu.Item>)
+              menus.map((item, index) => {
+                return this.renderMenuItem(item, index);
+              })
             }
           </Menu>
         </Sider>
@@ -130,7 +171,7 @@ class Home extends PureComponent {
                   this.handleNoticeVisibleChange(visible)
                 }}
                 loading={reservationLoading}
-                popupAlign={{ offset: [20, 0] }}
+                popupAlign={{ offset: [20, - 20] }}
               >
                 <NoticeIcon.Tab
                   list={reservationList}
@@ -152,6 +193,10 @@ class Home extends PureComponent {
             </Content>
           </Layout>
         </Layout>
+        <DealReservationPanel />
+        <ProductSelector />
+        <CustomerSelector />
+        <ReservationSelector />
       </Layout>
     )
   }

@@ -7,6 +7,9 @@ const route = {
     path: '/home/reservation',
     exact: true,
     component: AsyncComponent(() => import('./list/list')),
+  },{
+    path: '/home/reservation/detail/:id',
+    component: AsyncComponent(() => import('./detail/detail')),
   }]
 };
 

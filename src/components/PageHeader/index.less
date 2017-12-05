@@ -1,0 +1,74 @@
+@import "~antd/lib/style/themes/default.less";
+
+.pageHeaderWrapper {
+  background: @component-background;
+  border-bottom: @border-width-base @border-style-base #e8e8e8;
+  margin-left: -24px;
+  margin-top: -24px;
+  margin-right: -24px;
+
+  .productDetailPageHeader {
+    display: flex;
+    padding: 24px 24px 0;
+    .productDetailLogo {
+      flex: 0 1 auto;
+      margin-right: 16px;
+      padding-top: 1px;
+      > img {
+        width: 28px;
+        height: 28px;
+        border-radius: @border-radius-base;
+        display: block;
+      }
+    }
+    @media screen and (min-width: @screen-sm) {
+      .productDetailRow {
+        display: flex;
+      }
+    }
+
+    .productDetailTitle {
+      font-size: 20px;
+      font-weight: 500;
+      color: @heading-color;
+    }
+
+    .productDetailAction {
+      margin-left: 56px;
+      min-width: 266px;
+      .ant-btn-group:not(:last-child),
+      .ant-btn:not(:last-child) {
+        margin-right: 8px;
+        .ant-btn-group > .ant-btn {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+
+  .tabs {
+    display: flex;
+    margin: 0 0 -5px 16px;
+  }
+}
+
+.productDetailTitle, .productDetailAction, .productDetailContent, .productDetailExtraContent, .productDetailMain {
+  flex: auto;
+}
+
+.productDetailTitle, .productDetailAction {
+  margin-bottom: 16px;
+}
+
+.productDetailLogo, .productDetailContent, .productDetailExtraContent {
+  margin-bottom: 16px;
+}
+
+.productDetailAction, .productDetailExtraContent {
+  text-align: right;
+}
+
+.productDetailExtraContent {
+  margin-left: 88px;
+  min-width: 242px;
+}
